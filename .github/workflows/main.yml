@@ -26,14 +26,16 @@ jobs:
           # Target directory
           TARGET:  ${{secrets.AMAZON_TARGET}}
           SCRIPT_BEFORE: |
-            PO=$(lsof -iTCP -sTCP:LISTEN -P | grep "^node.*3000" -n | awk -F " " '{ printf $2}')
-            kill $PO
+            echo "------------------ BEFORE -----------------"
+            # sudo docker-compose down
             ls
+            echo "------------------ BEFORE -----------------"
           SCRIPT_AFTER: |
-            echo $PO
-            cd instance
+            echo "------------------ AFTER -----------------"
+            # cd instance
             ls
-            # node instance/server.js
+            # sudo docker-compose up -d
+            echo "------------------ AFTER -----------------"
         
     
     
