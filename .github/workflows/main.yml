@@ -31,8 +31,9 @@ jobs:
             ls
           SCRIPT_AFTER: |
             echo $PO
+            cd instance
             ls
-            node instance/server.js
+            # node instance/server.js
         
     
     
