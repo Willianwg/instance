@@ -32,7 +32,7 @@ jobs:
           SCRIPT_AFTER: |
             echo $PO
             ls
-            node server.js
+            node instance/server.js
         
     
     
