@@ -28,7 +28,11 @@ jobs:
           SCRIPT_BEFORE: |
             PO=$(lsof -iTCP -sTCP:LISTEN -P | grep "^node.*3000" -n | awk -F " " '{ printf $2}')
             kill $PO
-          SCRIPT_AFTER: node server.js
+            ls
+          SCRIPT_AFTER: |
+            echo $PO
+            ls
+            node server.js
         
     
     
