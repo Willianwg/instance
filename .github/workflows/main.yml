@@ -25,6 +25,10 @@ jobs:
           SOURCE: ./
           # Target directory
           TARGET:  ${{secrets.AMAZON_TARGET}}
+          SCRIPT_BEFORE: |
+            PO=$(lsof -iTCP -sTCP:LISTEN -P | grep "^node.*3000" -n | awk -F " " '{ printf $2}')
+            kill $PO
+          SCRIPT_AFTER: node server.js
         
     
     
