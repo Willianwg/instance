@@ -34,7 +34,7 @@ jobs:
           SCRIPT_AFTER: |
             echo "------------------ AFTER -----------------"
             cd instance
-            sudo docker-compose up -d
+            sudo docker-compose up --build -d
             echo "------------------ AFTER -----------------"
         
     
