@@ -27,6 +27,7 @@ jobs:
           TARGET:  ${{secrets.AMAZON_TARGET}}
           SCRIPT_BEFORE: |
             echo "------------------ BEFORE -----------------"
+            cd instance
             # sudo docker-compose down
             ls
             echo "------------------ BEFORE -----------------"
